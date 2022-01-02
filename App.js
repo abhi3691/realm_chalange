@@ -26,7 +26,9 @@ export default function App() {
       numberOfLines={2}
       onChangeText={setBookName}
       value={BookName}
-      defaultValue=''>
+      defaultValue=''
+      keyboardType='default'
+      autoCapitalize='characters'>
       </TextInput >
       <TextInput style={styles.inputBoxStyle}
       placeholder='Author Name'
@@ -42,7 +44,8 @@ export default function App() {
       numberOfLines={4}
       defaultValue=''
       onChangeText={setDescription}
-      value={Description}>
+      value={Description}
+      textAlignVertical='top'>
       </TextInput >
       <View style={{marginTop:10}}>
       <Button
@@ -51,7 +54,7 @@ export default function App() {
         addBook(recordID, BookName, Author,Description);
         setLibrary(getAllBooks)
         setId()
-        console.log(recordID,BookName)
+        console.log(recordID,"The "+BookName,"Was written by "+Author,)
       }}
       >
       </Button>
