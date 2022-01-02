@@ -19,7 +19,7 @@ export default function App() {
   return (
     <ScrollView style={styles.container} showsHorizontalScrollIndicator={false}
     >
-      <View style={{margin:20,alignItems:'center',justifyContent:'center'}}>
+      <View style={{margin:10,alignItems:'center',justifyContent:'center'}}>
       <TextInput style={styles.inputBoxStyle}
       placeholder='Book Name'
       multiline={true}
@@ -44,7 +44,7 @@ export default function App() {
       onChangeText={setDescription}
       value={Description}>
       </TextInput >
-      <View style={{marginTop:10,}}>
+      <View style={{marginTop:10}}>
       <Button
       title={'ADD BOOK'}
       onPress={()=>{
@@ -57,11 +57,11 @@ export default function App() {
       </Button>
       </View>
       </View>
-      <View style={{marginLeft:30,width:'35%',height:'10%',backgroundColor:'#fff',alignItems:'center',justifyContent:'center',elevation:4}}>
+      <View style={{marginLeft:30,width:'35%',height:'5%',backgroundColor:'#fff',alignItems:'center',justifyContent:'center',elevation:4}}>
         <Text style={{fontSize:22,fontWeight:'bold',color:'blue'}} >Book Details</Text>
       </View>
       <FlatList
-      style={{height:200,marginTop:20,backgroundColor:'#ffff'}}
+      style={{height:300,marginTop:10,backgroundColor:'#ffff'}}
         data={Library}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item, index}) => {
@@ -84,6 +84,7 @@ export default function App() {
       onPress={() => {
         deleteBook();
         setLibrary(getAllBooks);
+        setRecordID(1)
       }}>
 
       </Button>
